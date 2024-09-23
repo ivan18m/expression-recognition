@@ -9,7 +9,6 @@ from src.client.buffer import CAN_PRODUCE_EVENT, PREDICTIONS_QUEUE, STOP_EVENT
 from src.client.capture import CameraError, ERVideoCapture
 from src.common.frame import FrameError
 from src.common.models import FramePredictions
-from src.common.utils import get_path
 
 _log = logging.getLogger(__name__)
 
