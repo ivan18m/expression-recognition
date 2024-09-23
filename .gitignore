@@ -1,0 +1,58 @@
+# Datasets
+data/datasets*
+*.jpg
+# Videos
+data/videos
+
+# Python Byte-compiled / optimized
+*.py[cod]
+*$py.class
+
+# Log
+*.log*
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# pyenv
+.python-version
+
+# virtualenv
+.venv
+venv/
+
+# Mac
+.DS_Store
+
+# IDE
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# vim
+*~
+*swp
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Local development env
++.env

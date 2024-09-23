@@ -1,0 +1,58 @@
+[project]
+name = "expression_recognition"
+description = "Recognize facial expressions in images and videos."
+readme = "README.md"
+requires-python = ">=3.11"
+dynamic = ["version"]
+# Run `./scripts/requirements.sh` to generate `requirements.txt`
+dependencies = [
+    "numpy~=1.26.4",
+    "torch~=2.2.0",
+    "torchvision~=0.19.1",
+    "tqdm~=4.66.5",
+    "opencv-python~=4.10.0",
+    "matplotlib~=3.8.3",
+    "torchcam~=0.4.0",       # Pins numpy < 2.0.0
+    "pyyaml~=6.0.2",
+    "pydantic~=2.9.2",
+    "httpx[http2]~=0.27.2",
+    "pyzmq~=26.2.0",
+    "fastapi~=0.115.0",
+    "uvicorn~=0.30.6",
+]
+
+[project.optional-dependencies]
+dev = ["ruff", "uv", "pytest", "coverage", "freezegun"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+exclude = ["*.ipynb"]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "CPY",    # Copyright
+    "ANN",    # Annotations
+    "D",      # Docstring style
+    "DOC",    # Docstring lint
+    "INP001", # __init__.py missing
+    "PL",     # pylint
+    "ERA001", # commented code
+    "PTH",    # Pathlib
+    "FBT",    # Boolean argument
+    "EM",
+    "TRY",
+    "COM812",
+    "ISC001",
+]
+# Allow autofix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+exclude = ["*.ipynb"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["src", "tests"]
+
+[tool.ruff.lint.per-file-ignores]
+# Ignore `S101` (assert used) in tests.
+"**/tests/*" = ["S101"]

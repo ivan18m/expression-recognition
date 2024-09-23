@@ -1,0 +1,30 @@
+app_name: expression-recognition
+labels:
+  - anger
+  - disgust
+  - fear
+  - happiness
+  # - neutral # comment out for ExpressionNet
+  - sadness
+  - surprise
+image_size: [48, 48]
+
+# Dataset Preprocessing
+dataset_dir: data/datasets/fer2013
+random_rotation: 15
+normalize_mean: [0.5]
+normalize_std: [0.35]
+
+# Training
+batch_size: 32
+epochs: 50
+learning_rate: 0.01
+learning_rate_decay: 0.5
+learning_rate_decay_step: 2
+early_stop_patience: 7
+models_dir: data/models
+
+# Evaluation
+rectangle_color: [255, 105, 65] # BGR
+text_color: [255, 255, 255] # BGR
+use_gradcam: true
