@@ -17,7 +17,7 @@ class TrainingError(Exception):
     """Custom exception for training errors."""
 
     def __init__(self, message: str):
-        super().__init__(message)
+        super().__init__(f"Training error: {message}")
 
 
 def load_images_from_folder(path: str) -> tuple[DataLoader, DataLoader]:

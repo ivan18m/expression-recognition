@@ -35,7 +35,7 @@ async def get_predictions(frame_predictions: FramePredictions) -> FramePredictio
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(exc)) from exc
 
 
-@app.get("/mood")
+@app.get("/mood/latest")
 async def get_mood() -> MoodResponse:
     global LATEST_PREDICTIONS
     if LATEST_PREDICTIONS is None:
